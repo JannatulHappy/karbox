@@ -1,0 +1,43 @@
+/* footer styles start */
+.footer-container {
+    background-color: #1d1c1c;
+  }
+  .footer-hr {
+    border-bottom: 5px solid rgb(226, 194, 152);
+    width: 200px;
+  }
+  .footer-title {
+   color: rgb(219, 219, 218);
+    overflow: hidden;
+  }
+  .footer-text {
+    color: rgb(109, 106, 106);
+  }
+  .icon{
+    align-items: center;
+    justify-content: center;
+  }
+ .icon .fab {
+  color: #381c0b;
+  
+  background-color: rgb(238, 224, 224);
+  margin-top: 8px;
+  margin-left: 10px;
+  padding: 11px;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 500;
+}
+  .payment img{
+    width:44px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+  .footer-last-text {
+    color: rgb(194, 185, 185);
+    background-color: rgb(43, 42, 42);
+    padding: 16px 0px;
+    border-radius: 8px;
+  }
+  

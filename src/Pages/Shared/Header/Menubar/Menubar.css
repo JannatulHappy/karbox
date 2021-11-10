@@ -1,0 +1,56 @@
+.nav {
+    background-color: #272727;
+
+    padding: 18px 10px;
+  }
+  /* #ba9a15 */
+  nav .nav-item {
+    color: rgb(163, 159, 159);
+  
+    font-weight: 700;
+    list-style: none;
+    margin-left: 20px;
+    font-size: 13px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 7px 15px;
+    text-decoration: none;
+  }
+  nav .nav-item:hover {
+    color:#d8b508;
+  }
+  nav .nav-item:active {
+    color: #d8b508;
+  }
+  .fa-shopping-cart{
+    color: #bda012;
+  }
+  #toggle{
+      color:#d8b508;
+  }
+  #toggle .fa-sliders-h{
+    color:#d8b508;
+    font-size: 30px;
+    font-weight: 900;
+  }
+  .logo{
+      color: white;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: 7px;
+      overflow: hidden;
+  }
+  .logo .logo-main{
+      color:#d6af14
+  }
+  .login-btn {
+    color: rgb(248, 244, 244);
+    padding: 10px 30px;
+    font-weight: 500;
+    font-size: 15px;
+    margin-right: 5px;
+    background-color:#464343;
+   width: 110px;
+  }
+  
+  

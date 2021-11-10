@@ -1,0 +1,28 @@
+.up-header {
+    background-color: #fdfdfc;
+    
+    opacity: 0.8;
+  
+  }
+  .up-header-item {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .up-header-item strong {
+    color: #d8b508;
+  }
+  .left-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  .right-item strong {
+    color: #ebc508;
+    
+    border-radius: 30px;
+  }
+  .fa-chevron-right {
+    font-size: 20px;
+  }
+  

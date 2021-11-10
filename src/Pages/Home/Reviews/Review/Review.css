@@ -1,0 +1,25 @@
+.review-img{
+height: 120px;
+width: 120px;
+border-radius: 50%;
+}
+.fa-star {
+    color: rgb(219, 183, 23);
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  .review-name{
+    color:rgb(219, 183, 23);
+    overflow: hidden;
+}
+.review{
+   padding-left: 10px;
+}
+.review p{
+    font-size: 14px;
+
+    color:rgb(119, 119, 116)
+}
+.review-top p{
+    color:rgb(189, 172, 18);;
+}

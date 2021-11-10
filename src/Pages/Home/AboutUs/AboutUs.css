@@ -1,0 +1,33 @@
+.about-container{
+    background-color: #c7c7c7;
+   
+  }
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    width:90%;
+    margin: 0 auto;
+  }
+  .about img{
+      height: 460px;
+  }
+  .about-right {
+    background-color: rgb(112, 112, 108);
+  }
+ .hr{
+   color:rgb(196, 162, 15);
+   border-bottom: 5px solid rgb(214, 178, 14);
+   width:100px;
+ }
+ .about-title{
+   overflow: hidden;
+ }
+  .about-sub-title {
+    color: rgb(155, 130, 20);
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: 400;
+  }
+ 
+  

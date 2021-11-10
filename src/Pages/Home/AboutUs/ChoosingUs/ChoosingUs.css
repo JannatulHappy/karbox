@@ -1,0 +1,23 @@
+.choose-container{
+    background-color: #272727;
+}
+
+.choose{
+    width: 80%;
+    margin: 0 auto;
+}
+.choose-top p{
+    color:rgb(189, 172, 18);
+}
+.choose .fas{
+background-color: rgb(226, 205, 19);
+padding: 25px 20px;
+font-size: 32px;
+margin: 30px 0px;
+}
+.choose .fa-star{
+    color: black;
+}
+.choose .text{
+    color:rgb(143, 143, 140)
+}

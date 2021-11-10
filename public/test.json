@@ -1,0 +1,23 @@
+[
+    {
+      "img": "https://i.ibb.co/cvfzg3W/review-1.jpg",
+      "name": "Robert Zrk",
+      "rating":"3.6",
+      "profession": "Player",
+      "des": "I really had my doubts at first.I asked for a quote online and the next day i was contacted by a sales representative.The quote came out high so the sales man did a good job and find me a good deal"
+    },
+    {
+      "img": "https://i.ibb.co/KKdQR02/review-2.jpg",
+      "name": "Arnond Richard",
+      "rating":"4.1",
+      "profession": "Designer",
+      "des": "I really had my doubts at first.I asked for a quote online and the next day i was contacted by a sales representative.The quote came out high so the sales man did a good job and find me a good deal"
+    },
+    {
+      "img": "https://i.ibb.co/Y0Qyf94/review-5.png",
+      "name": "Riakrd Happy",
+      "rating":"5",
+      "profession": "Musician",
+      "des": "I really had my doubts at first.I asked for a quote online and the next day i was contacted by a sales representative.The quote came out high so the sales man did a good job and find me a good deal"
+    }
+  ]

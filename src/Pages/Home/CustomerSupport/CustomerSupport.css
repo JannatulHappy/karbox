@@ -1,0 +1,32 @@
+.Support-container{
+    background-color: #272727;
+}
+.support{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.support .title{
+    color:rgb(231, 200, 23)
+}
+.support img{
+    width:100px;
+    height: 130px;
+    border-radius: 50%;
+}
+.support .text{
+    font-size: 14px;
+
+    color:rgb(143, 143, 140)
+}
+.support-btn{
+    color: black;
+   
+    font-weight: 500;
+    font-size: 15px;
+    margin-right: 5px;
+    background-color: rgb(219, 183, 23);
+   width: 190px;
+}
