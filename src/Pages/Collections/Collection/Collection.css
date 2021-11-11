@@ -1,0 +1,80 @@
+.collections {
+  background-color: #272727;
+}
+/* #1e1e29 */
+/* #feb800 */
+.collection-container {
+  width: 86%;
+  margin: auto;
+}
+.collection {
+  overflow: hidden;
+}
+
+.card img {
+  width: 400px;
+  height: 250px;
+}
+.card-body{
+    overflow: hidden;
+}
+.collection .rating {
+  position: absolute;
+
+  top: 50px;
+  left: 10px;
+}
+.collection .price{
+    background-color:#feb800 ;
+    padding: 12px 15px;
+    font-size:22px;
+    font-weight: 700;
+    top:210px;
+    left:260px;
+    color:black;
+    position: absolute;
+}
+.collection .rating-text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.purchase-btn {
+  background-color: #feb800;
+position: relative;
+left:20px;  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  padding: 15px 15px;
+  text-align: left;
+  overflow-y: hidden;
+  text-align: center;
+  margin: 0px auto 18px auto;
+}
+.card {
+  height: 618px;
+  color:white;
+  position: relative;
+  background-color: #1f1f24 ;
+}
+.card-body .des{
+color:rgb(126, 121, 121)
+}
+.thin{
+    color:rgb(126, 121, 121);
+    font-size:12px
+}
+.thick{
+    font-weight: 900;
+    color:rgb(160, 153, 153);
+}
+.card {
+  position: relative;
+  cursor: zoom-in;
+  transition: transform 0.5s ease;
+}
+
+  
+  .card:hover {
+    transform: scale(1.075);
+  }

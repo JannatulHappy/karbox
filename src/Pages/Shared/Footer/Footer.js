@@ -24,7 +24,7 @@ const Footer = () => {
             online and value your existing car all from the comfort of your
             favourite armchair In line with our commitment to treating customers
             fairly, you can find more information about Charles Hurst complaints
-            policy here
+            policy here.
           </p>
           <div className="row pe-5">
             <div className="col-12 text-center mt-4">

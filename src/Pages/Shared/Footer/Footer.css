@@ -1,6 +1,6 @@
 /* footer styles start */
 .footer-container {
-    background-color: #1d1c1c;
+    background-color: #181717;
   }
   .footer-hr {
     border-bottom: 5px solid rgb(226, 194, 152);
@@ -18,14 +18,15 @@
     justify-content: center;
   }
  .icon .fab {
-  color: #381c0b;
+  color: #f5f4ed;
   
-  background-color: rgb(238, 224, 224);
-  margin-top: 8px;
+ outline: 1px solid rgb(212, 211, 211);
+  margin-top: 2px;
   margin-left: 10px;
   padding: 11px;
   border-radius: 50%;
-  font-size: 22px;
+  font-size: 18px;
+  margin-right: 2px;
   font-weight: 500;
 }
   .payment img{

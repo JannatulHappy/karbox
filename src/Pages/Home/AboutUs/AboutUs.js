@@ -15,8 +15,8 @@ const About = () => {
             <h3 className="about-sub-title my-4">
               Karbox is the best place to get your best sports car
             </h3>
-            <span className="text-secondary">
-              Welcome to Premier Sportscars Co. Premier Sportscars Co has
+            <span className="text-secondary  me-5">
+              Welcome to karbox Sportscars Co.karbox Sportscars Co has
               proudly been in business since 1995 providing the highest level of
               service to our customers. We believe that Good Business begins
               with Top Quality Automobiles, High Attention to detail & continues

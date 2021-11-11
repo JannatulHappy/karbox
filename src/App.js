@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import Footer from "./Pages/Shared/Footer/Footer"
+import Collections from './Pages/Collections/Collections';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home></Home>
+          </Route>
+          <Route path="/collections">
+            <Collections></Collections>
           </Route>
         </Switch>
         <Footer/>

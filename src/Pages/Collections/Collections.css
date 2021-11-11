@@ -1,0 +1,16 @@
+.collections-top{
+    background-color: #272727;
+    height:270px;
+    width:100vw;
+    overflow: hidden;
+}
+.top-sub-title{
+    color:rgb(230, 192, 27);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 6px;
+}
+.bottom-sub-title{
+    margin: 0px 0px;
+    color:rgb(120, 121, 121)
+}

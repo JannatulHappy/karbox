@@ -13,7 +13,7 @@ const Reviews = () => {
   return (
     <div className="review-container pb-5">
       <div className="row text-center review-top">
-        <p className="fs-6 fw-bold ">KARBOX</p>
+        <p className="fs-6 fw-bold ">TESTIMONI</p>
         <h1 className="fw-bold text-white pb-4">What They Say</h1>
       </div>
       <div className="row container my-5 mx-auto">
