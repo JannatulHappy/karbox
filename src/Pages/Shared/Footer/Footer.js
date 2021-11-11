@@ -58,12 +58,12 @@ const Footer = () => {
         <div className="col-md-6 col-lg-3 col-12  ">
           <h3 className="footer-title">Collections</h3>
           <hr className="footer-hr" />
-          <p className="footer-text"></p>
-          <p className="footer-text"></p>
-          <p className="footer-text"></p>
-          <p className="footer-text"></p>
-          <p className="footer-text"></p>
-          <p className="footer-text"></p>
+          <p className="footer-text">GTX_1122 BOOST</p>
+          <p className="footer-text">PORSCHE 718 BOXSTER/CAYMAN</p>
+          <p className="footer-text">TOYOTA GR SUPRA</p>
+          <p className="footer-text">MAZDA MX-5</p>
+          <p className="footer-text">MCLAREN 720S</p>
+          <p className="footer-text">FORD MUSTANG</p>
         </div>
         <div className="col-md-6 col-lg-3 col-12  ">
           <h3 className="footer-title">Book Collection</h3>

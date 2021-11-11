@@ -4,6 +4,12 @@
     width:100vw;
     overflow: hidden;
 }
+.home-collections-top{
+    background-color: #272727;
+    height:170px;
+    width:100vw;
+    overflow: hidden;
+}
 .top-sub-title{
     color:rgb(230, 192, 27);
     font-weight: 700;
