@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, getIdToken, signOut } from "firebase/auth";
-import initializeAuthentication from "../Firebase/firebase.init";
-
+import initializeAuthentication from "../Firebase/firebase.init"
 
 // initialize firebase app
 initializeAuthentication()
@@ -87,7 +85,7 @@ const useFirebase = () => {
     }, [auth])
 
     useEffect(() => {
-        fetch(`https://stark-caverns-04377.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -96,7 +94,6 @@ const useFirebase = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
             // Sign-out successful.
-            setUser({})
         }).catch((error) => {
             // An error happened.
         })
@@ -105,7 +102,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://stark-caverns-04377.herokuapp.com/users', {
+        fetch('http://localhost:5000/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -119,9 +116,9 @@ const useFirebase = () => {
         user,
         admin,
         token,
-        setAuthError,
         isLoading,
         authError,
+        setAuthError,
         registerUser,
         loginUser,
         signInWithGoogle,

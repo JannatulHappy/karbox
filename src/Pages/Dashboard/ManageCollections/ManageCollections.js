@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import useAuth from "../../hooks/useAuth";
-import "./MyOrders.css";
-const MyOrders = () => {
-  const { user } = useAuth();
-  const [orders, setOrders] = useState([]);
+
+const ManageCollections = () => {
+ 
+  const [collections,setCollections] = useState([]);
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrders/${user?.email}`)
+    fetch(`http://localhost:5000/allCollections`)
       .then((res) => res.json())
-      .then((data) => setOrders(data));
-  }, [user.email, control,orders]);
+      .then((data) => setCollections(data));
+  }, [ control,collections]);
 
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, u want to delete it?");
     if (proceed) {
-      fetch(`http://localhost:5000/deleteOrder/${id}`, {
+      fetch(`http://localhost:5000/deleteManageCollection/${id}`, {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
@@ -33,30 +32,29 @@ const MyOrders = () => {
   return (
     <div className="my-booking">
       <div className="text-center my-4 fw-bold fs-2">
-        My Orders: {orders.length} Collections
+        My Orders: {collections.length} Collections
       </div>
       <div className="row text-center my-5">
-        {orders?.map((pd, index) => (
+        {collections?.map((pd, index) => (
           <div className="col-12 ">
             <Table striped bordered hover>
               <thead className="fs-5 table-head">
                 <tr>
                   <th>#</th>
-                  <th> Order Collection</th>
+                  <th>  Collection Name</th>
 
-                  <th>status</th>
-                  <th>City</th>
-                  <th>Address</th>
-                  <th></th>
+                  <th>price</th>
+                  <th>image Link</th>
+                 
                 </tr>
               </thead>
               <tbody className="fw-bold">
                 <tr>
                   <td>{index + 1}</td>
                   <td>{pd.name}</td>
-                  <td>{pd.status}</td>
-                  <td>{pd?.city}</td>
-                  <td>{pd.address}</td>
+                  <td>{pd.price}</td>
+                  <td>{pd?.img}</td>
+                  
                   <button
                     onClick={() => handleDelete(pd?._id)}
                     className="btn my-1 fw-bold fs-6 w-75 mx-auto bg-danger px-4"
@@ -74,4 +72,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default ManageCollections;

@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import useAuth from "../../hooks/useAuth";
-import "./AddReview.css";
-const AddReview = () => {
-  const { user } = useAuth();
+
+const AddCollection = () => {
   const {
     register,
     handleSubmit,
@@ -11,8 +9,8 @@ const AddReview = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    
-    fetch(`http://localhost:5000/addreview`, {
+      console.log(data)
+    fetch(`http://localhost:5000/addCollection`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -20,7 +18,7 @@ const AddReview = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          Swal.fire("Good job!", "Your Review has been added!");
+          Swal.fire("Congrats!", "Collection has been added!");
         } else {
           alert("Try again");
         }
@@ -31,50 +29,37 @@ const AddReview = () => {
 
   return (
     <div className="review-container ">
-      <div className=" row">
+      <div className=" row mb-5">
         <div className="col-12 col-md-8 col-lg-5 ms-lg-5 ps-lg-5">
           <div className="review-box  pb-3 d-flex justify-content-center align-items-center">
             <div className="booking-form ">
               <p className="fs-5 mt-4 ps-md-5 ps-lg-5 pe-lg-4 fw-bold text-black">
-                Add Review
+                Add Collection
               </p>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   type="text"
                   className="p-2  text-white my-2"
-                  value={user.displayName}
-                  {...register("userName", { required: true })}
-                />
-                <br />
-                <input
-                  type="email"
-                  className="p-2 text-white my-2"
-                  value={user.email}
-                  {...register("userEmail", { required: true })}
+                  placeholder="Collection Name"
+                  {...register("name", { required: true })}
                 />
                 <br />
                 <input
                   type="text"
-                  className="p-2  text-white my-2"
-                  placeholder="Name"
-                  {...register("name", { required: true })}
+                  className="p-2 text-white my-2"
+                  placeholder="Price"
+                  {...register("price", { required: true })}
                 />
                 <br />
 
                 <input
                   type="text"
                   className="p-2 my-2 text-secondary"
-                  placeholder="Add Your Image"
+                  placeholder="Add Collection Image"
                   {...register("img", { required: true })}
                 />
                 <br />
 
-                <input
-                  className="p-2 my-2 text-secondary"
-                  placeholder="Rating"
-                  {...register("rating", { required: true })}
-                />
-                <br />
                 <textarea
                   className="p-2 my-2 rounded-3 bg-black w-100 text-secondary"
                   placeholder="Description"
@@ -83,8 +68,40 @@ const AddReview = () => {
                 <br />
                 <input
                   className="p-2 my-2 text-secondary"
-                  placeholder="Profession "
-                  {...register("profession", { required: true })}
+                  placeholder="Rating"
+                  {...register("rating", { required: true })}
+                />
+                <br />
+                <input
+                  type="text"
+                  className="p-2  text-white my-2"
+                  placeholder="Transmission"
+                  {...register("transmission", { required: true })}
+                />
+                <br />
+
+                <input
+                  className="p-2 my-2 text-secondary"
+                  placeholder="passenger"
+                  {...register("passenger", { required: true })}
+                />
+                <br />
+                <input
+                  className="p-2 my-2 text-secondary"
+                  placeholder="Top Speed"
+                  {...register("topSpeed", { required: true })}
+                />
+                <br />
+                <input
+                  className="p-2 my-2 text-secondary"
+                  placeholder="hp"
+                  {...register("hp", { required: true })}
+                />
+                <br />
+                <input
+                  className="p-2 my-2 text-secondary"
+                  placeholder="Km/Hour"
+                  {...register("kmHour", { required: true })}
                 />
                 <br />
 
@@ -103,4 +120,4 @@ const AddReview = () => {
   );
 };
 
-export default AddReview;
+export default AddCollection;
