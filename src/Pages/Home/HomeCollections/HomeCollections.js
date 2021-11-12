@@ -5,7 +5,7 @@ import HomeCollection from "./HomeCollection/HomeCollection";
 const HomeCollections = () => {
   const [collections, setCollections] = useState([]);
   useEffect(() => {
-    fetch("/../test2.json")
+    fetch("http://localhost:5000/allCollections")
       .then((res) => res.json())
       .then((data) => setCollections(data));
   }, []);
@@ -26,7 +26,7 @@ const HomeCollections = () => {
             {collections.slice(0,6).map((collection) => (
               <HomeCollection
                 collection={collection}
-                key={collection.id}
+                key={collection._id}
               ></HomeCollection>
             ))}
           </div>

@@ -3,7 +3,7 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 const HomeCollection = (props) => {
   const {
-    id,
+    _id,
     name,
     img,
     price,
@@ -62,7 +62,7 @@ const HomeCollection = (props) => {
               </div>
             </div>
           </div>
-          <Link to={`/collection/${id}`}>
+          <Link className="btn" to={`/collection/${_id}`}>
             <button className="purchase-btn">Purchase Now</button>
           </Link>
         </div>

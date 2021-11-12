@@ -2,10 +2,11 @@ import React from "react";
 import "./Menubar.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import useAuth from "../../../hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
+
 
 const Menubar = () => {
-  //   const { user, handleLogout } = useAuth()
+  const { user, logout } = useAuth();
   return (
     <Navbar collapseOnSelect expand="lg" className="nav ">
       <Container>
@@ -25,17 +26,28 @@ const Menubar = () => {
             <Link className="nav-item" to="/home">
               Home
             </Link>
-            <Link className="nav-item" to="/about">About</Link>
+           
             <Link className="nav-item" to="/collections">
               Collections
             </Link>
-            <Link className="nav-item" to="/dashboard">
-             dashboard
-            </Link>
-
-            <Link className="login-btn text-decoration-none ms-3" to="/login">
-              LOGIN
-            </Link>
+            {user.email && (
+              <Link className="nav-item" to="/dashboard">
+                dashboard
+              </Link>
+            )}
+             {user.email && (
+              <span
+                style={{ color: "orange", fontWeight: "900", fontSize: "17px" }}
+              >
+                {user?.displayName}
+              </span>
+            )}
+            {user?.email ? 
+               <button className="ms-3 btn  login-btn text-uppercase" onClick={logout} >Logout</button>:
+             <Link className="login-btn text-decoration-none ms-3" to="/login">
+                LOGIN
+              </Link>
+            }
 
             <i className="fas fa-shopping-cart mt-2 ms-2 fs-5"></i>
           </Nav>

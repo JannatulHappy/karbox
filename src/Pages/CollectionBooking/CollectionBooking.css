@@ -1,0 +1,70 @@
+.top-part {
+  background-image: url("../../assets/about-1.jpg"),
+    linear-gradient(rgba(71, 71, 71, 0.527), rgba(53, 52, 52, 0.5));
+
+  height: 330px;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+.top-part-title {
+  background-color: black;
+  opacity: 0.6;
+  height: 70px;
+  color: #bd8a08;
+}
+.booking-container{
+    color:white;
+    background-color: #272727;
+}
+.booking {
+  width: 88%;
+  margin: 0 auto;
+}
+.card-title{
+    color:#feb800;
+}
+.booking-left img {
+  border-radius: 8px;
+}
+.booking-left {
+ background-color: #1e1e24;
+ margin-top: 20px;
+ 
+}
+
+.left-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left-container img {
+  height: 350px;
+}
+.img img {
+  width: 240px;
+  height: 200px;
+  border-radius: 4px;
+}
+.submit-btn{
+    color:#feb800;
+}
+.order-box {
+  
+ position: absolute;
+ top:340px;
+  background-color: #feb800;
+  border-radius: 10px;
+
+}
+.booking-form input {
+ width: 100%;
+ box-shadow: 5px 2px 5px gray;
+  border-radius: 8px;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: #1e1e29;
+}

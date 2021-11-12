@@ -4,7 +4,7 @@ import Rating from "react-rating";
 import { Link } from "react-router-dom";
 const Collection = (props) => {
   const {
-    id,
+    _id,
     name,
     img,
     price,
@@ -16,8 +16,9 @@ const Collection = (props) => {
     topSpeed,
     kmHour,
   } = props.collection;
+  
   return (
-    <div className="col-lg-4 col-md-6 col-12 my-5">
+    <div className="col-lg-4 col-md-6 col-12 ">
       <div className="collection">
         <div className=" card  ">
           <img className="card-img-top" src={img} alt="" />
@@ -62,9 +63,9 @@ const Collection = (props) => {
                 <p className="thick">{kmHour}</p>
               </div>
             </div>
-          </div>
-          <Link to={`/collection/${id}`}>
-            <button className="purchase-btn">Purchase Now</button>
+          </div >
+          <Link className="btn" to={`/collection/${_id}`}>
+            <button className="purchase-btn ">Purchase Now</button>
           </Link>
         </div>
       </div>

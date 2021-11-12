@@ -15,8 +15,8 @@
   width: 400px;
   height: 250px;
 }
-.card-body{
-    overflow: hidden;
+.card-body {
+  overflow: hidden;
 }
 .collection .rating {
   position: absolute;
@@ -24,15 +24,15 @@
   top: 50px;
   left: 10px;
 }
-.collection .price{
-    background-color:#feb800 ;
-    padding: 12px 15px;
-    font-size:22px;
-    font-weight: 700;
-    top:210px;
-    left:260px;
-    color:black;
-    position: absolute;
+.collection .price {
+  background-color: #feb800;
+  padding: 12px 15px;
+  font-size: 22px;
+  font-weight: 700;
+  top: 210px;
+  left: 260px;
+  color: black;
+  position: absolute;
 }
 .collection .rating-text {
   position: absolute;
@@ -41,32 +41,35 @@
 }
 .purchase-btn {
   background-color: #feb800;
-position: relative;
-left:20px;  font-size: 16px;
+ 
+  font-size: 16px;
   color: black;
-  font-weight: 500;
+  font-weight: 600;
   padding: 15px 15px;
   text-align: left;
-  overflow-y: hidden;
-  text-align: center;
-  margin: 0px auto 18px auto;
+  overflow: hidden;
+  margin: 0px auto 8px auto;
 }
 .card {
-  height: 618px;
-  color:white;
+  height: 580px;
+  color: white;
   position: relative;
-  background-color: #1f1f24 ;
+  background-color: #1f1f24;
 }
-.card-body .des{
-color:rgb(126, 121, 121)
+.card-body .des {
+  color: rgb(126, 121, 121);
 }
-.thin{
-    color:rgb(126, 121, 121);
-    font-size:12px
+.btn {
+  overflow: hidden;
+  width:190px
 }
-.thick{
-    font-weight: 900;
-    color:rgb(160, 153, 153);
+.thin {
+  color: rgb(126, 121, 121);
+  font-size: 12px;
+}
+.thick {
+  font-weight: 900;
+  color: rgb(160, 153, 153);
 }
 .card {
   position: relative;
@@ -74,7 +77,6 @@ color:rgb(126, 121, 121)
   transition: transform 0.5s ease;
 }
 
-  
-  .card:hover {
-    transform: scale(1.075);
-  }
+.card:hover {
+  transform: scale(1.075);
+}

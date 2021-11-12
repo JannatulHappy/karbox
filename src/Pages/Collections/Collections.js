@@ -5,11 +5,11 @@ import "./Collections.css";
 const Collections = () => {
   const [collections, setCollections] = useState([]);
   useEffect(() => {
-    fetch("/../test2.json")
+    fetch("http://localhost:5000/allCollections")
       .then((res) => res.json())
       .then((data) => setCollections(data));
   }, []);
-
+console.log()
   return (
     <>
       <Menubar></Menubar>
@@ -30,7 +30,7 @@ const Collections = () => {
             {collections.map((collection) => (
               <Collection
                 collection={collection}
-                key={collection.id}
+                key={collection._id}
               ></Collection>
             ))}
           </div>
