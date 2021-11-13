@@ -16,7 +16,7 @@ const Collections = () => {
 
       <div className="row text-center text-white collections-top">
         <p className="mt-4 pt-4 mb-0 pb-0 top-sub-title">COLLECTIONS</p>
-        <p className="my-4 py-0 fs-1 fw-bold">Find Your Dream Car Here</p>
+        <p className="my-4 py-0 fs-1 fw-bold">Find Your Dream Sports Car Here</p>
         <p className="mt-2 py-0  bottom-sub-title fw-bold">
           We're Proud to Represent the World's most Prestigious Car Brands at
           over 140 Dealerships Nationwide

@@ -13,7 +13,7 @@ const HomeCollections = () => {
     <>
       <div className="row text-center text-white home-collections-top">
         <p className="mt-4  mb-0 pb-0 top-sub-title">COLLECTIONS</p>
-        <p className=" py-0 mt-3 fs-1 fw-bold">Find Your Dream Car Here</p>
+        <p className=" py-0 mt-3 fs-1 fw-bold">Find Your Dream Sports Car Here</p>
       </div>
 
       <div className="row  pb-5 collections ">

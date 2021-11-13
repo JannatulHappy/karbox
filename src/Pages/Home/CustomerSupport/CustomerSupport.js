@@ -14,7 +14,7 @@ const CustomerSupport = () => {
             experience to share. Contact us now to have all of your tour-related
             questions answered!
           </p>
-          <button className="btn support-btn mt-5 mb-3 py-2 fs-5">Contact Us</button>
+          <button className="btn support-btn fw-bold mt-5 mb-3 py-2 fs-5">Contact Us</button>
         </div>
         <div className="col-lg-4 col-md-6  col-12 d-flex">
           <img

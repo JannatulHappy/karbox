@@ -27,16 +27,16 @@ const Dashboard = () => {
                 {!admin && (
                   <div>
                     <Link to={`/home`}>
-                      <li className="dashboard-menu "><i class="fas fa-home me-2"></i>Home</li>
+                      <li className="dashboard-menu "><i className="fas fa-home me-2"></i>Home</li>
                     </Link>
                     <Link to={`${url}`}>
-                      <li className="dashboard-menu "><i class="fab fa-first-order me-2"></i>My Orders</li>
+                      <li className="dashboard-menu "><i className="fab fa-first-order me-2"></i>My Orders</li>
                     </Link>
                     <Link to={`${url}/payment`}>
-                      <li className="dashboard-menu "><i class="fas fa-shopping-cart me-2"></i>Payment</li>
+                      <li className="dashboard-menu "><i className="fas fa-shopping-cart me-2"></i>Payment</li>
                     </Link>
                     <Link to={`${url}/review`}>
-                      <li className="dashboard-menu mb-4"><i class="fas fa-user-edit me-2"></i>Add Review</li>
+                      <li className="dashboard-menu mb-4"><i className="fas fa-user-edit me-2"></i>Add Review</li>
                     </Link>
                     {user?.email && (
                       <button
@@ -53,22 +53,22 @@ const Dashboard = () => {
                   <div>
                     {admin && (
                       <Link to={`${url}`}>
-                        <li className="dashboard-menu ">Add Collection</li>
+                        <li className="dashboard-menu "><i className="fas fa-car me-2"></i>Add Collection</li>
                       </Link>
                     )}
                     {admin && (
                       <Link to={`${url}/makeAdmin`}>
-                        <li className="dashboard-menu ">Make Admin</li>
+                        <li className="dashboard-menu "><i className="fas fa-unlock-alt me-2"></i>Make Admin</li>
                       </Link>
                     )}
                     {admin && (
                       <Link to={`${url}/manageAllOrders`}>
-                        <li className="dashboard-menu ">Manage Orders</li>
+                        <li className="dashboard-menu "><i className="fab fa-first-order-alt me-2"></i>Manage Orders</li>
                       </Link>
                     )}
                     {admin && (
                       <Link to={`${url}/manageAllCollections`}>
-                        <li className="dashboard-menu mb-4">Manage Collections</li>
+                        <li className="dashboard-menu mb-4"><i className="fas fa-tasks me-2"></i>Manage Collections</li>
                       </Link>
                     )}
                     {admin && (

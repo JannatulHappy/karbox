@@ -201,7 +201,7 @@ const CollectionBooking = () => {
                     <div className="row ">
                       <div className="d-flex">
                         <div>
-                          <i class="fas fa-phone-volume fs-1 fw-bold text-black me-2"></i>
+                          <i class="fas fa-phone-volume fs-1 fw-bold text-black me-2b"></i>
                         </div>
                         <div className="text-black fw-bold">
                           <p>{call}</p>

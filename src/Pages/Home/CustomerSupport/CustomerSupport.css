@@ -9,7 +9,7 @@
     align-items: center;
 }
 .support .title{
-    color:rgb(231, 200, 23)
+    color:rgb(206, 145, 32);
 }
 .support img{
     width:100px;
@@ -27,6 +27,6 @@
     font-weight: 500;
     font-size: 15px;
     margin-right: 5px;
-    background-color: rgb(219, 183, 23);
+    background-color: rgb(206, 145, 32);
    width: 190px;
 }

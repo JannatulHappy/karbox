@@ -37,11 +37,12 @@ const Menubar = () => {
             )}
              {user.email && (
               <span
-                style={{ color: "orange", fontWeight: "900", fontSize: "17px" }}
+                style={{ color: "rgb(197, 179, 20)", fontWeight: "900", fontSize: "17px" }}
               >
                 {user?.displayName}
               </span>
             )}
+            
             {user?.email ? 
                <button className="ms-3 btn  login-btn text-uppercase" onClick={logout} >Logout</button>:
              <Link className="login-btn text-decoration-none ms-3" to="/login">

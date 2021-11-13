@@ -27,7 +27,7 @@ const MakeAdmin = () => {
     e.preventDefault();
   };
   return (
-    <div className="row ps-5">
+    <div className="row ps-5 mb-3">
       <h2 className="text-warning fw-bold fs-2 my-4">Make an Admin</h2>
       <form onSubmit={handleAdminSubmit}>
         <input

@@ -11,7 +11,7 @@ const MyOrders = () => {
     fetch(`https://limitless-gorge-71694.herokuapp.com/myOrders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, [user.email, control, orders]);
+  }, [user.email, control,orders]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, u want to delete it?");

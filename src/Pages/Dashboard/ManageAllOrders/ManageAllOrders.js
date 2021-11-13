@@ -1,40 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
-import { useForm } from "react-hook-form";
+import { Table, Button } from "react-bootstrap";
+
+import axios from "axios";
 
 const MangeAllOrders = () => {
   const [orders, setOrders] = useState([]);
-  const { register, handleSubmit } = useForm();
   const [control, setControl] = useState(false);
-
-  const [orderId, setOrderId] = useState("");
-
+// get all 
   useEffect(() => {
     fetch("https://limitless-gorge-71694.herokuapp.com/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [control, orders]);
 
-  const handleOrderId = (id) => {
-    setOrderId(id);
-  };
-
-  const onSubmit = (data) => {
-    fetch(
-      `https://limitless-gorge-71694.herokuapp.com/statusUpdate/${orderId}`,
-      {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(data),
-      }
-    )
-      .then((res) => res.json())
-      .then((result) => {
-       
-        if(result.modifiedCount){
-          alert("status updated")
-        }
-      });
+  //Handle Status
+  const handleApprove = (id) => {
+    setControl(false);
+    const proceed = window.confirm(
+      "Want to Status shipped the collection from Status Pending??"
+    );
+    if (proceed) {
+      axios
+        .put(`https://limitless-gorge-71694.herokuapp.com/approveBooking/${id}`)
+        .then((result) => {
+          if (result.data.modifiedCount) {
+            setControl(true);
+          }
+        });
+    }
   };
 
   const handleDelete = (id) => {
@@ -56,6 +49,7 @@ const MangeAllOrders = () => {
         });
     }
   };
+  window.scroll(0, 0);
   return (
     <div className="my-booking">
       <div className="text-center my-4 fw-bold fs-2">
@@ -73,7 +67,7 @@ const MangeAllOrders = () => {
 
                   <th>Address</th>
                   <th>City</th>
-                  <th>Status</th>
+                  <th>Shipping Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -86,20 +80,13 @@ const MangeAllOrders = () => {
                   <td>{pd.address}</td>
                   <td>{pd.city}</td>
                   <td>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                      <select
-                        onClick={() => handleOrderId(pd?._id)}
-                        {...register("status")}
-                      >
-                        <option value={pd?.status}>{pd?.status}</option>
-                        <option value="Shipped">Shipped</option>
-                      </select>
-                      <input
-                        value="Update"
-                        type="submit"
-                        className="btn bg-success px-2 w-25 fw-bold ms-2  py-2"
-                      />
-                    </form>
+                    <Button
+                      variant="success"
+                      className="text-black w-50 fw-bold"
+                      onClick={() => handleApprove(pd._id)}
+                    >
+                      {pd?.status}
+                    </Button>
                   </td>
                   <td
                     onClick={() => handleDelete(pd?._id)}
