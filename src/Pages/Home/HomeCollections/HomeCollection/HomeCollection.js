@@ -32,7 +32,7 @@ const HomeCollection = (props) => {
             <p className="price">{price}</p>
             <p className="rating-text fw-bold text-white fs-5">{rating}</p>
             <Rating
-              className="rating"
+              className="rating" readonly
               initialRating={rating}
               emptySymbol="far fa-star"
               fullSymbol="fas fa-star"

@@ -6,7 +6,7 @@ import axios from "axios";
 const MangeAllOrders = () => {
   const [orders, setOrders] = useState([]);
   const [control, setControl] = useState(false);
-// get all 
+  // get all orders
   useEffect(() => {
     fetch("https://limitless-gorge-71694.herokuapp.com/allOrders")
       .then((res) => res.json())
@@ -29,7 +29,7 @@ const MangeAllOrders = () => {
         });
     }
   };
-
+  // delete users order
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, u want to delete it?");
     if (proceed) {

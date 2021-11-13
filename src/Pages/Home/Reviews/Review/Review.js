@@ -11,7 +11,7 @@ const Review = (props) => {
         <br />
 
         <Rating
-          initialRating={rating}
+          initialRating={rating} readonly
           emptySymbol="far fa-star"
           fullSymbol="fas fa-star"
         ></Rating>

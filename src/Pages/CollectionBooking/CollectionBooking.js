@@ -8,6 +8,7 @@ import Rating from "react-rating";
 import useAuth from "../hooks/useAuth";
 const CollectionBooking = () => {
   const { collectionId } = useParams();
+  const [singleCollection, setSingleCollection] = useState({});
   const { user } = useAuth();
   const {
     register,
@@ -15,6 +16,7 @@ const CollectionBooking = () => {
     reset,
     formState: { errors },
   } = useForm();
+  //  add order 
   const onSubmit = (data) => {
     data.status = "pending";
     fetch(`https://limitless-gorge-71694.herokuapp.com/addBooking`, {
@@ -34,7 +36,7 @@ const CollectionBooking = () => {
 
     reset();
   };
-  const [singleCollection, setSingleCollection] = useState({});
+  // getting single collection 
   useEffect(() => {
     fetch(
       `https://limitless-gorge-71694.herokuapp.com/singleCollection/${collectionId}`
@@ -81,6 +83,7 @@ const CollectionBooking = () => {
                 <div className="rating d-flex">
                   <Rating
                     initialRating={rating}
+                    readonly
                     emptySymbol="far fa-star"
                     fullSymbol="fas fa-star"
                   ></Rating>
@@ -201,7 +204,7 @@ const CollectionBooking = () => {
                     <div className="row ">
                       <div className="d-flex">
                         <div>
-                          <i class="fas fa-phone-volume fs-1 fw-bold text-black me-2b"></i>
+                          <i className="fas fa-phone-volume fs-1 fw-bold text-black me-2b"></i>
                         </div>
                         <div className="text-black fw-bold">
                           <p>{call}</p>

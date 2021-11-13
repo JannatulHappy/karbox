@@ -24,7 +24,7 @@ const useFirebase = () => {
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
-
+// create user
   const registerUser = (email, password, name, history) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
@@ -48,7 +48,7 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
-
+// login user
   const loginUser = (email, password, location, history) => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
@@ -62,7 +62,7 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
-
+// google sign in
   const signInWithGoogle = (location, history) => {
     setIsLoading(true);
     signInWithPopup(auth, googleProvider)
@@ -94,7 +94,7 @@ const useFirebase = () => {
     });
     return () => unsubscribed;
   }, [auth]);
-
+// check admin  or not
   useEffect(() => {
     fetch(`https://limitless-gorge-71694.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
@@ -112,7 +112,7 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
-
+// save user to database 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
     fetch("https://limitless-gorge-71694.herokuapp.com/users", {

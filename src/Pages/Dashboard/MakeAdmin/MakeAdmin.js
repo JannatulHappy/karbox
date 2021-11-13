@@ -7,6 +7,7 @@ const MakeAdmin = () => {
   const handleOnBlur = (e) => {
     setEmail(e.target.value);
   };
+  // make admin
   const handleAdminSubmit = (e) => {
     const user = { email };
     fetch("https://limitless-gorge-71694.herokuapp.com/users/admin", {

@@ -23,6 +23,7 @@ const Dashboard = () => {
           <div className="col-md-3 ">
             <div className="dashboard mt-5 pt-3">
               <h5 className="text-black ms-2  fw-bold fs-4">Dashboard</h5>
+              {/* link for nested route */}
               <div className="admin-dashboard mt-0">
                 {!admin && (
                   <div>
@@ -84,8 +85,10 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
+          {/* nested route */}
           <div className="col-md-9">
             <p className="top ps-5 pt-2  text-white fs-4 fw-bold"></p>
+            {/* for user */}
             {!admin && (
               <Switch>
                 <Route exact path="/home">
@@ -102,6 +105,7 @@ const Dashboard = () => {
                 </Route>
               </Switch>
             )}
+            {/* for admin */}
             {admin && (
               <Switch>
                 <AdminRoute exact path={ path }>

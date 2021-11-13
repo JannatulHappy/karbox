@@ -6,13 +6,13 @@ const MyOrders = () => {
   const { user } = useAuth();
   const [orders, setOrders] = useState([]);
   const [control, setControl] = useState(false);
-
+  // get order by using email
   useEffect(() => {
     fetch(`https://limitless-gorge-71694.herokuapp.com/myOrders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, [user.email, control,orders]);
-
+  }, [user.email, control, orders]);
+  // delete order from my order
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, u want to delete it?");
     if (proceed) {

@@ -4,6 +4,7 @@ import Collection from "./Collection/Collection";
 import "./Collections.css";
 const Collections = () => {
   const [collections, setCollections] = useState([]);
+  // getting all collections
   useEffect(() => {
     fetch("https://limitless-gorge-71694.herokuapp.com/allCollections")
       .then((res) => res.json())

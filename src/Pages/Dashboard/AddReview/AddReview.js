@@ -10,6 +10,7 @@ const AddReview = () => {
     reset,
     formState: { errors },
   } = useForm();
+  // add new review to home
   const onSubmit = (data) => {
     fetch(`https://limitless-gorge-71694.herokuapp.com/addreview`, {
       method: "POST",
@@ -69,7 +70,10 @@ const AddReview = () => {
                 <br />
 
                 <input
-                  className="p-2 my-2 text-secondary"maxLength="5" minLength="1"type="number" 
+                  className="p-2 my-2 text-secondary"
+                  maxLength="5"
+                  minLength="1"
+                  type="number"
                   placeholder="Rating"
                   {...register("rating", { required: true })}
                 />

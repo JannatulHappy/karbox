@@ -8,6 +8,7 @@ const AddCollection = () => {
     reset,
     formState: { errors },
   } = useForm();
+  // adding new collection
   const onSubmit = (data) => {
     console.log(data);
     fetch(`https://limitless-gorge-71694.herokuapp.com/addCollection`, {
