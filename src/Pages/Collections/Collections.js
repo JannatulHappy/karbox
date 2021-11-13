@@ -5,11 +5,11 @@ import "./Collections.css";
 const Collections = () => {
   const [collections, setCollections] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allCollections")
+    fetch("https://limitless-gorge-71694.herokuapp.com/allCollections")
       .then((res) => res.json())
       .then((data) => setCollections(data));
   }, []);
-console.log()
+  console.log();
   return (
     <>
       <Menubar></Menubar>
@@ -21,7 +21,7 @@ console.log()
           We're Proud to Represent the World's most Prestigious Car Brands at
           over 140 Dealerships Nationwide
         </p>
-        <hr className="text-white mt-5"/>
+        <hr className="text-white mt-5" />
       </div>
 
       <div className="row  pb-5 collections ">

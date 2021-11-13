@@ -8,7 +8,7 @@ import Rating from "react-rating";
 import useAuth from "../hooks/useAuth";
 const CollectionBooking = () => {
   const { collectionId } = useParams();
-  const {user}=useAuth()
+  const { user } = useAuth();
   const {
     register,
     handleSubmit,
@@ -17,14 +17,14 @@ const CollectionBooking = () => {
   } = useForm();
   const onSubmit = (data) => {
     data.status = "pending";
-    fetch(`http://localhost:5000/addBooking`, {
+    fetch(`https://limitless-gorge-71694.herokuapp.com/addBooking`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result)
+        console.log(result);
         if (result.insertedId) {
           Swal.fire("Good job!", "Your Booking has been added!");
         } else {
@@ -36,11 +36,28 @@ const CollectionBooking = () => {
   };
   const [singleCollection, setSingleCollection] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/singleCollection/${collectionId}`)
+    fetch(
+      `https://limitless-gorge-71694.herokuapp.com/singleCollection/${collectionId}`
+    )
       .then((res) => res.json())
       .then((data) => setSingleCollection(data));
   }, [collectionId]);
-  const { name, img, rating, price, des,img2,img3,img4,img5 } = singleCollection;
+  const {
+    name,
+    img,
+    rating,
+    price,
+    des,
+    img2,
+    img3,
+    img4,
+    img5,
+    overall,
+    salesManImg,
+    salesManName,
+    call,
+    memberFrom,
+  } = singleCollection;
   return (
     <div>
       <Menubar />
@@ -56,11 +73,11 @@ const CollectionBooking = () => {
               </div>
               <div className="col-lg-6 col-md-6 col-12 ">
                 <h5 className="card-title  mb-3 fw-bold">{name}</h5>
-               
-                  <p>
-                    <span className="discount-price fw-bold"> {price}</span>
-                  </p>
-              
+
+                <p>
+                  <span className="discount-price fw-bold"> {price}</span>
+                </p>
+
                 <div className="rating d-flex">
                   <Rating
                     initialRating={rating}
@@ -68,7 +85,6 @@ const CollectionBooking = () => {
                     fullSymbol="fas fa-star"
                   ></Rating>
                 </div>
-                
 
                 <p className="card-text">{des}</p>
               </div>
@@ -105,7 +121,6 @@ const CollectionBooking = () => {
 
                   <input
                     type="number"
-
                     className="p-2 my-2 text-secondary"
                     placeholder="Number"
                     {...register("number", { required: true })}
@@ -145,7 +160,6 @@ const CollectionBooking = () => {
           </div>
         </div>
         <div className="row bottom-part my-5 booking ">
-         
           <div className="col-lg-9 col-md-12 col-12 d-flex middle-part">
             <div className="m-2 img">
               <img className="img-fluid" src={img2} alt="" />
@@ -158,6 +172,46 @@ const CollectionBooking = () => {
             </div>
             <div className="m-2 img">
               <img className="img-fluid" src={img5} alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="row container booking-left mx-auto">
+          <div className="col-12 py-5">
+            <p className="fs-3  card-title fw-bold">Overall</p>
+            <p className="text-white mt-4 ">{overall} Happy Journey!!</p>
+          </div>
+        </div>
+        <div className="contact-container my-5">
+          <div className="row  container mx-auto ">
+            <div
+              className="col-12 py-4  rounded contact
+            "
+            >
+              <div className="row ">
+                <div className="d-flex">
+                  <div>
+                    <img src={salesManImg} alt="" />
+                  </div>
+                  <div>
+                    <div>
+                      <p className="fs-3 text-black fw-bold">{salesManName}</p>
+                      <p className="text-secondary fw-bold">{memberFrom}</p>
+                    </div>
+
+                    <div className="row ">
+                      <div className="d-flex">
+                        <div>
+                          <i class="fas fa-phone-volume fs-1 fw-bold text-black me-2"></i>
+                        </div>
+                        <div className="text-black fw-bold">
+                          <p>{call}</p>
+                          <p>Contact Dealer</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

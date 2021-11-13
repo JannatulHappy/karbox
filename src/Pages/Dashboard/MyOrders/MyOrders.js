@@ -8,16 +8,15 @@ const MyOrders = () => {
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrders/${user?.email}`)
+    fetch(`https://limitless-gorge-71694.herokuapp.com/myOrders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, [user.email, control,orders]);
-
+  }, [user.email, control, orders]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, u want to delete it?");
     if (proceed) {
-      fetch(`http://localhost:5000/deleteOrder/${id}`, {
+      fetch(`https://limitless-gorge-71694.herokuapp.com/deleteOrder/${id}`, {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
@@ -26,7 +25,7 @@ const MyOrders = () => {
           if (data.deletedCount) {
             setControl(true);
             alert("Deleted successfully");
-          } 
+          }
         });
     }
   };
@@ -37,7 +36,7 @@ const MyOrders = () => {
       </div>
       <div className="row text-center my-5">
         {orders?.map((pd, index) => (
-          <div className="col-12 ">
+          <div key={index} className="col-12 ">
             <Table striped bordered hover>
               <thead className="fs-5 table-head">
                 <tr>
@@ -57,12 +56,12 @@ const MyOrders = () => {
                   <td>{pd.status}</td>
                   <td>{pd?.city}</td>
                   <td>{pd.address}</td>
-                  <button
+                  <td
                     onClick={() => handleDelete(pd?._id)}
                     className="btn my-1 fw-bold fs-6 w-75 mx-auto bg-danger px-4"
                   >
                     Delete
-                  </button>
+                  </td>
                 </tr>
               </tbody>
             </Table>

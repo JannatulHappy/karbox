@@ -9,8 +9,8 @@ const AddCollection = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-      console.log(data)
-    fetch(`http://localhost:5000/addCollection`, {
+    console.log(data);
+    fetch(`https://limitless-gorge-71694.herokuapp.com/addCollection`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -67,7 +67,7 @@ const AddCollection = () => {
                 />
                 <br />
                 <input
-                  className="p-2 my-2 text-secondary"
+                  className="p-2 my-2 text-secondary"type="number" maxLength="5" minLength="1"
                   placeholder="Rating"
                   {...register("rating", { required: true })}
                 />

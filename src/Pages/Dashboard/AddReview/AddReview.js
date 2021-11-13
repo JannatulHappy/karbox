@@ -11,8 +11,7 @@ const AddReview = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    
-    fetch(`http://localhost:5000/addreview`, {
+    fetch(`https://limitless-gorge-71694.herokuapp.com/addreview`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -31,9 +30,9 @@ const AddReview = () => {
 
   return (
     <div className="review-container ">
-      <div className=" row">
+      <div className=" row my-3">
         <div className="col-12 col-md-8 col-lg-5 ms-lg-5 ps-lg-5">
-          <div className="review-box  pb-3 d-flex justify-content-center align-items-center">
+          <div className="review-box  pb-4 d-flex justify-content-center align-items-center">
             <div className="booking-form ">
               <p className="fs-5 mt-4 ps-md-5 ps-lg-5 pe-lg-4 fw-bold text-black">
                 Add Review
@@ -70,7 +69,7 @@ const AddReview = () => {
                 <br />
 
                 <input
-                  className="p-2 my-2 text-secondary"
+                  className="p-2 my-2 text-secondary"maxLength="5" minLength="1"type="number" 
                   placeholder="Rating"
                   {...register("rating", { required: true })}
                 />
@@ -91,7 +90,7 @@ const AddReview = () => {
                 {errors.exampleRequired && <span>This field is required</span>}
 
                 <input
-                  className="  px-3 mt-3 submit-btn bg-black  fs-6   btn "
+                  className=" px-3 mt-3 submit-btn bg-black  fs-6   btn "
                   type="submit"
                 />
               </form>

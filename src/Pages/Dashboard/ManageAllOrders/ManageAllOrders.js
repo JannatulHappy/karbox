@@ -9,37 +9,44 @@ const MangeAllOrders = () => {
 
   const [orderId, setOrderId] = useState("");
 
-  
   useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("https://limitless-gorge-71694.herokuapp.com/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, [control,orders]);
+  }, [control, orders]);
 
   const handleOrderId = (id) => {
     setOrderId(id);
   };
 
   const onSubmit = (data) => {
-   
-    fetch(`http://localhost:5000/statusUpdate/${orderId}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://limitless-gorge-71694.herokuapp.com/statusUpdate/${orderId}`,
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
-          console.log(result)
+       
+        if(result.modifiedCount){
+          alert("status updated")
+        }
       });
   };
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, u want to delete it?");
     if (proceed) {
-      fetch(`http://localhost:5000/DeleteManageBooking/${id}`, {
-        method: "DELETE",
-        headers: { "content-type": "application/json" },
-      })
+      fetch(
+        `https://limitless-gorge-71694.herokuapp.com/DeleteManageBooking/${id}`,
+        {
+          method: "DELETE",
+          headers: { "content-type": "application/json" },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {
@@ -56,53 +63,52 @@ const MangeAllOrders = () => {
       </div>
       <div className="row text-center my-5">
         {orders?.map((pd, index) => (
-          <div className="col-12 ">
+          <div key={index} className="col-12 ">
             <Table striped bordered hover>
-              <thead>
+              <thead className="fs-5 table-head">
                 <tr>
                   <th>#</th>
+                  <th>Email</th>
                   <th>Order Collection</th>
 
-                  
                   <th>Address</th>
                   <th>City</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
-             
-                <tbody>
-                  <tr>
-                    <td>{index + 1}</td>
-                    <td>{pd.name}</td>
-                    <td>{pd.address}</td>
-                    <td>{pd.city}</td>
-                    <td>
-                      <form onSubmit={handleSubmit(onSubmit)}>
-                        <select 
-                          onClick={() => handleOrderId(pd?._id)}
-                          {...register("status")}
-                        >
-                          <option value={pd?.status}>{pd?.status}</option>
-                          <option value="approve">approve</option>
-                          
-                        </select>
-                        <input
-                          value="Update"
-                          type="submit"
-                          className="btn bg-success w-25 fw-bold ms-2  py-2"
-                        />
-                      </form>
-                    </td>
-                    <button
-                      onClick={() => handleDelete(pd?._id)}
-                      className="btn bg-danger w-75 fw-bold py-2"
-                    >
-                      Delete
-                    </button>
-                  </tr>
-                </tbody>
-           
+
+              <tbody className="fw-bold">
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>{pd.userEmail}</td>
+                  <td>{pd.name}</td>
+                  <td>{pd.address}</td>
+                  <td>{pd.city}</td>
+                  <td>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                      <select
+                        onClick={() => handleOrderId(pd?._id)}
+                        {...register("status")}
+                      >
+                        <option value={pd?.status}>{pd?.status}</option>
+                        <option value="Shipped">Shipped</option>
+                      </select>
+                      <input
+                        value="Update"
+                        type="submit"
+                        className="btn bg-success px-2 w-25 fw-bold ms-2  py-2"
+                      />
+                    </form>
+                  </td>
+                  <td
+                    onClick={() => handleDelete(pd?._id)}
+                    className="btn bg-danger mt-2 w-75 fw-bold py-2"
+                  >
+                    Delete
+                  </td>
+                </tr>
+              </tbody>
             </Table>
           </div>
         ))}

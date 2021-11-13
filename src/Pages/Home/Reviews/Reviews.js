@@ -5,7 +5,7 @@ import "./Reviews.css";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://limitless-gorge-71694.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -21,7 +21,6 @@ const Reviews = () => {
           <Review key={review._id} review={review}></Review>
         ))}
       </div>
-      
     </div>
   );
 };
