@@ -49,7 +49,6 @@ const MangeAllOrders = () => {
         });
     }
   };
-  window.scroll(0, 0);
   return (
     <div className="my-booking">
       <div className="text-center my-4 fw-bold fs-2">
