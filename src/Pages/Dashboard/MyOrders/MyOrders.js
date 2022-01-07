@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./MyOrders.css";
 const MyOrders = () => {
@@ -47,6 +48,7 @@ const MyOrders = () => {
                   <th>City</th>
                   <th>Address</th>
                   <th></th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody className="fw-bold">
@@ -62,6 +64,7 @@ const MyOrders = () => {
                   >
                     Delete
                   </td>
+                  <td>{pd.payment?"Paid":<Link to={`dashboard/payment/${pd?._id}`}><button>Pay Now</button></Link>}</td>
                 </tr>
               </tbody>
             </Table>

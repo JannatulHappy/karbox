@@ -125,6 +125,13 @@ const CollectionBooking = () => {
                   <input
                     type="number"
                     className="p-2 my-2 text-secondary"
+                    placeholder="Price"
+                    {...register("price", { required: true })}
+                  />
+                  <br />
+                  <input
+                    type="number"
+                    className="p-2 my-2 text-secondary"
                     placeholder="Number"
                     {...register("number", { required: true })}
                   />
