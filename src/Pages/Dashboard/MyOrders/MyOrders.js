@@ -64,7 +64,15 @@ const MyOrders = () => {
                   >
                     Delete
                   </td>
-                  <td>{pd.payment?"Paid":<Link to={`dashboard/payment/${pd?._id}`}><button>Pay Now</button></Link>}</td>
+                  <td>
+                    {pd?.payment ? (
+                      "Paid"
+                    ) : (
+                      <Link to={`/dashboard/payment/${pd?._id}`}>
+                        <button>Pay Now</button>
+                      </Link>
+                    )}
+                  </td>
                 </tr>
               </tbody>
             </Table>

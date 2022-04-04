@@ -8,10 +8,10 @@ import MakeAdmin from "./MakeAdmin/MakeAdmin";
 import AddCollection from "./AddCollection/AddCollection";
 import ManageAllOrders from "./ManageAllOrders/ManageAllOrders";
 import Home from "../Home/Home";
-import Payment from "./Payment/Payment";
 import ManageCollections from "./ManageCollections/ManageCollections";
 import useAuth from "../hooks/useAuth";
 import AdminRoute from "../AdminRoute/AdminRoute";
+import Payment from "./Payment/Payment";
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
   const { user, admin, logout } = useAuth();
@@ -27,17 +27,21 @@ const Dashboard = () => {
               <div className="admin-dashboard mt-0">
                 {!admin && (
                   <div>
-                    <Link to={`/home`}>
-                      <li className="dashboard-menu "><i className="fas fa-home me-2"></i>Home</li>
+                    <Link  to={`/home`}>
+                      <li className="dashboard-menu ">
+                        <i className="fas fa-home me-2"></i>Home
+                      </li>
                     </Link>
                     <Link to={`${url}`}>
-                      <li className="dashboard-menu "><i className="fab fa-first-order me-2"></i>My Orders</li>
+                      <li className="dashboard-menu ">
+                        <i className="fab fa-first-order me-2"></i>My Orders
+                      </li>
                     </Link>
-                    <Link to={`${url}/payment/:appointmentId`}>
-                      <li className="dashboard-menu "><i className="fas fa-shopping-cart me-2"></i>Payment</li>
-                    </Link>
+
                     <Link to={`${url}/review`}>
-                      <li className="dashboard-menu mb-4"><i className="fas fa-user-edit me-2"></i>Add Review</li>
+                      <li className="dashboard-menu mb-4">
+                        <i className="fas fa-user-edit me-2"></i>Add Review
+                      </li>
                     </Link>
                     {user?.email && (
                       <button
@@ -54,22 +58,32 @@ const Dashboard = () => {
                   <div>
                     {admin && (
                       <Link to={`${url}`}>
-                        <li className="dashboard-menu "><i className="fas fa-car me-2"></i>Add Collection</li>
+                        <li className="dashboard-menu ">
+                          <i className="fas fa-car me-2"></i>Add Collection
+                        </li>
                       </Link>
                     )}
                     {admin && (
                       <Link to={`${url}/makeAdmin`}>
-                        <li className="dashboard-menu "><i className="fas fa-unlock-alt me-2"></i>Make Admin</li>
+                        <li className="dashboard-menu ">
+                          <i className="fas fa-unlock-alt me-2"></i>Make Admin
+                        </li>
                       </Link>
                     )}
                     {admin && (
                       <Link to={`${url}/manageAllOrders`}>
-                        <li className="dashboard-menu "><i className="fab fa-first-order-alt me-2"></i>Manage Orders</li>
+                        <li className="dashboard-menu ">
+                          <i className="fab fa-first-order-alt me-2"></i>Manage
+                          Orders
+                        </li>
                       </Link>
                     )}
                     {admin && (
                       <Link to={`${url}/manageAllCollections`}>
-                        <li className="dashboard-menu mb-4"><i className="fas fa-tasks me-2"></i>Manage Collections</li>
+                        <li className="dashboard-menu mb-4">
+                          <i className="fas fa-tasks me-2"></i>Manage
+                          Collections
+                        </li>
                       </Link>
                     )}
                     {admin && (
@@ -97,9 +111,10 @@ const Dashboard = () => {
                 <Route exact path={path}>
                   <MyOrders></MyOrders>
                 </Route>
-                <Route path={`${path}/payment/:appointmentId`}>
+                <Route path={`${path}/payment/:orderId`}>
                   <Payment></Payment>
                 </Route>
+
                 <Route path={`${path}/review`}>
                   <AddReview></AddReview>
                 </Route>
@@ -108,7 +123,7 @@ const Dashboard = () => {
             {/* for admin */}
             {admin && (
               <Switch>
-                <AdminRoute exact path={ path }>
+                <AdminRoute exact path={path}>
                   <AddCollection></AddCollection>
                 </AdminRoute>
 
